@@ -10,21 +10,26 @@ export class Satellite {
         launchDate: string,
         orbitType: string,
         operational: boolean,
+
     ) {
         this.name = name;
         this.type = type;
         this.launchDate = launchDate;
         this.orbitType = orbitType;
         this.operational = operational;
-        
+
+
     }
 
-    shouldShowWarning(): boolean{
-        if(this.type.toUpperCase === 'SPACE DEBRIS'){
+    shouldShowWarning(): boolean {
+        let spaceDebris: string = 'space debris'
+        if (this.type.toLowerCase() === spaceDebris) {
+            console.log(spaceDebris + spaceDebris)
             return true
         } else {
             return false
         }
     }
+
 
 }
