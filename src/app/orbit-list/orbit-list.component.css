@@ -3,7 +3,7 @@
     color: #dd5;
 }
 
-warning {
+.warning {
     background-color: #da8a8a;
 }
 
@@ -25,4 +25,8 @@ th, td {
     text-align: left;
     margin: 5px 10px;
     padding: 6px;
+}
+
+tr:nth-child(even) {
+    background-color: lightblue;
 }
