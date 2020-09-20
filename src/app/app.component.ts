@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Satellite } from './satellite';
 
+import { Satellite } from './satellite';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'orbit-report';
   sourceList: Satellite[];
   displayList: Satellite[];
-  
+
   constructor() {
     this.sourceList = [];
     this.displayList = [];
@@ -32,11 +32,14 @@ export class AppComponent {
 
   }
   search(searchTerm: string): void {
+    console.log('searching')
     let matchingSatellites: Satellite[] = [];
     searchTerm = searchTerm.toLowerCase();
     for (let i = 0; i < this.sourceList.length; i++) {
       let name = this.sourceList[i].name.toLowerCase();
-      if (name.indexOf(searchTerm) >= 0) {
+      let type = this.sourceList[i].type.toLowerCase();
+      let orbitType = this.sourceList[i].orbitType.toLowerCase();
+      if (name.indexOf(searchTerm) >= 0 || type.indexOf(searchTerm) >= 0 || orbitType.indexOf(searchTerm) >= 0) {
         matchingSatellites.push(this.sourceList[i]);
       }
     }
